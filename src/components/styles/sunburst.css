@@ -1,0 +1,49 @@
+.mainContainer {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+
+  top: 0;
+
+  /* padding-top: 20px; */
+}
+html,
+body {
+  /* min-height: 100% !im; */
+}
+/* .sunburstContainer {
+    height: 100%;
+    position: fixed;
+    left: 0;
+  
+    width: 50%;
+  } */
+
+.pdfViewerContainer {
+  height: 100%;
+  position: fixed;
+  right: 0;
+  /* border-left: 1px solid grey; */
+
+  width: 40%;
+}
+
+.contextMenu {
+  box-shadow: 0 0 10px #e4e4e4;
+
+  font-size: 12px;
+  width: 150px;
+  font-weight: bold;
+  position: absolute;
+}
+
+.contextMenu ul li {
+  border-left: 2px solid transparent;
+  cursor: pointer;
+}
+
+.contextMenu:hover {
+  color: rgb(92, 131, 195);
+  background: #eee;
+  border-left: 4px solid rgb(91, 131, 195);
+}
