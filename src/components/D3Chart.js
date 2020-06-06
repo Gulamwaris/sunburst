@@ -521,7 +521,6 @@ D3Chart.create = (data, downloadPdf, downloadZipFile) => {
   const color = d3.scaleOrdinal(
     d3.quantize(d3.interpolateRainbow, root.children.length + 1)
   );
-  // const color = d3.scaleOrdinal(d3.schemeCategory20);
 
   svg.on("click", (d) => {
     d3.select(".btn-class").style("display", "none");
@@ -714,23 +713,17 @@ D3Chart.create = (data, downloadPdf, downloadZipFile) => {
         };
       });
 
-    transition
-      .selectAll("path.main-arc ")
-      .attrTween("d", (d1) => () => arc(d1));
-    transition
-      .selectAll("path.outer-arc ")
-      .attrTween("d", (d2) => () => arc(d2));
-    transition
-      .selectAll("path.topic-arc ")
-      .attrTween("d", (d3) => () => arc(d3));
+    transition.selectAll("path.main-arc ").attrTween("d", (d) => () => arc(d));
+    transition.selectAll("path.outer-arc ").attrTween("d", (d) => () => arc(d));
+    transition.selectAll("path.topic-arc ").attrTween("d", (d) => () => arc(d));
 
     transition
       .selectAll("path.hidden-arc")
-      .attrTween("d", (d4) => () => middleArcLine(d4));
+      .attrTween("d", (d) => () => middleArcLine(d));
 
     transition
       .selectAll("text")
-      .attrTween("display", (d5) => () => (textFits(d5) ? null : "none"));
+      .attrTween("display", (d) => () => (textFits(d) ? null : "none"));
 
     moveStackToFront(d);
 
